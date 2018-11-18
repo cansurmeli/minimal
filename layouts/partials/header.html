@@ -17,7 +17,7 @@
 				<script src="js/zoom.js"></script>
 				<script src="js/transition.js"></script>
 
-				{{ if .Site.matomoURL }}
+				{{ if .Site.MatomoURL }}
 					<!-- Matomo -->
 						<script type="text/javascript">
 							var _paq = _paq || [];
@@ -25,7 +25,7 @@
 							_paq.push(['trackPageView']);
 							_paq.push(['enableLinkTracking']);
 							(function() {
-								var u="{{ .Site.matomoURL }}";
+								var u="{{ .Site.MatomoURL }}";
 								_paq.push(['setTrackerUrl', u+'piwik.php']);
 								_paq.push(['setSiteId', '1']);
 								var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
