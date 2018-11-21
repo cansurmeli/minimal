@@ -1,85 +1,85 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{{ .Title }}</title>
-        {{ if .Site.Params.favicon }}
-        <link rel="icon" href="{{ .Site.Params.favicon | absURL }}">
-        {{ end }}
-        {{ partial "css" . }} {{ partial "js" . }} {{ .Hugo.Generator }}
-        {{ if .RSSLink }}
-        <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
-        <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
-        {{ end }}
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>{{ .Title }}</title>
+		{{ if .Site.Params.favicon }}
+		<link rel="icon" href="{{ .Site.Params.favicon | absURL }}">
+		{{ end }}
+		{{ partial "css" . }} {{ partial "js" . }} {{ .Hugo.Generator }}
+		{{ if .RSSLink }}
+		<link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+		<link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
+		{{ end }}
 
-				<script src="js/zoom.js"></script>
-				<script src="js/transition.js"></script>
+		<script src="js/zoom.js"></script>
+		<script src="js/transition.js"></script>
 
-				{{ if .Site.Params.Matomo.url }}
-					<!-- Matomo -->
-						<script type="text/javascript">
-							var _paq = _paq || [];
-							/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-							_paq.push(['trackPageView']);
-							_paq.push(['enableLinkTracking']);
-							(function() {
-								var u="{{ .Site.Params.Matomo.url }}";
-								_paq.push(['setTrackerUrl', u+'piwik.php']);
-								_paq.push(['setSiteId', '1']);
-								var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-								g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-							})();
-						</script>
-					<!-- End Matomo Code -->
-				{{ end }}
-    </head>
+		{{ if .Site.Params.Matomo.url }}
+		<!-- Matomo -->
+		<script type="text/javascript">
+			var _paq = _paq || [];
+			/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+			_paq.push(['trackPageView']);
+			_paq.push(['enableLinkTracking']);
+			(function() {
+				var u="{{ .Site.Params.Matomo.url }}";
+				_paq.push(['setTrackerUrl', u+'piwik.php']);
+				_paq.push(['setSiteId', '1']);
+				var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+				g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+			})();
+		</script>
+		<!-- End Matomo Code -->
+		{{ end }}
+	</head>
 
-    {{ if .Site.Params.MathJax | default true }}
-    <!-- adds MathJax support -->
-    <script type="text/javascript" async
-      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-    </script>
-    {{ end }}
+	{{ if .Site.Params.MathJax | default true }}
+	<!-- adds MathJax support -->
+	<script type="text/javascript" async
+		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+	{{ end }}
 
-    <body>
-        {{ partial "body-open" . }}
-        <nav class="navbar navbar-default navbar-fixed-top">
+	<body>
+		{{ partial "body-open" . }}
+		<nav class="navbar navbar-default navbar-fixed-top">
 
-            <div class="container">
+			<div class="container">
 
-                <div class="navbar-header">
+				<div class="navbar-header">
 
-                    <a class="navbar-brand visible-xs" href="#">{{ .Title }}</a>
+					<a class="navbar-brand visible-xs" href="#">{{ .Title }}</a>
 
-                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
+					<button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
 
-                </div>
+				</div>
 
-                <div class="collapse navbar-collapse">
+				<div class="collapse navbar-collapse">
 
-                    {{ if .Site.Menus.main }}
-                        <ul class="nav navbar-nav">
-                            {{ range sort .Site.Menus.main }}
-                                <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-                            {{ end }}
-                        </ul>
-                    {{ end }}
+					{{ if .Site.Menus.main }}
+					<ul class="nav navbar-nav">
+						{{ range sort .Site.Menus.main }}
+						<li><a href="{{ .URL }}">{{ .Name }}</a></li>
+						{{ end }}
+					</ul>
+					{{ end }}
 
-                    {{ if .Site.Menus.icon }}
-                        <ul class="nav navbar-nav navbar-right">
-                            {{ range sort .Site.Menus.icon }}
-                                <li class="navbar-icon"><a href="{{ .URL }}"><i class="fa fa-{{ .Name }}"></i></a></li>
-                            {{ end }}
-                        </ul>
-                    {{ end }}
+					{{ if .Site.Menus.icon }}
+					<ul class="nav navbar-nav navbar-right">
+						{{ range sort .Site.Menus.icon }}
+						<li class="navbar-icon"><a href="{{ .URL }}"><i class="fa fa-{{ .Name }}"></i></a></li>
+						{{ end }}
+					</ul>
+					{{ end }}
 
-                </div>
+				</div>
 
-            </div>
+			</div>
 
-        </nav>
+		</nav>
