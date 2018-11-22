@@ -1,12 +1,3 @@
-<!-- highlight.js -->
-{{ if .Site.Params.highlight | default false }}
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-	{{ range .Site.Params.highlightLanguages }}
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/{{ . }}.min.js"></script>
-	{{ end }}
-	<script>hljs.initHighlightingOnLoad();</script>
-{{ end }}
-
 <!-- custom -->
 {{ range .Site.Params.js }} <script src="{{ . | absURL }}"></script> {{ end }}
 
@@ -25,12 +16,14 @@
 <!--Transition-->
 <script src="js/transition.js"></script>
 
+<!--MathJax-->
 {{ if .Site.Params.MathJax | default true }}
 	<script type="text/javascript" async
 		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 	</script>
 {{ end }}
 
+<!--Matomo-->
 {{ if .Site.Params.Matomo.url }}
 	<script type="text/javascript">
 		var _paq = _paq || [];
