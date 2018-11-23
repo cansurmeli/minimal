@@ -16,9 +16,6 @@
 {{ $style := $sass | resources.ToCSS $options }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}" media="screen">
 
-<!-- custom -->
-{{ range .Site.Params.css }} <link rel="stylesheet" href="{{ . | absURL }}"> {{ end }}
-
 <!-- google fonts -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family={{ .Site.Params.font }}">
 
