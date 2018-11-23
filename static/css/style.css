@@ -92,6 +92,11 @@ figcaption {
   margin-bottom: 16px;
 }
 
+pre {
+  border: none !important;
+  margin: 0px !important;
+}
+
 img[data-action=zoom] {
   cursor: pointer;
   cursor: -webkit-zoom-in;
