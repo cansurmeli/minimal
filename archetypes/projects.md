@@ -8,5 +8,5 @@ description: ""
 repo: ""
 weight: 0
 draft: false
-image_dir: "images/projects/"
+image_dir: "/images/projects/"
 ---
