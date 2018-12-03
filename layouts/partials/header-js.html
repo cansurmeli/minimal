@@ -1,14 +1,13 @@
+<!--Required by the theme itself-->
+{{ $jQuery := resources.Get "js/jquery.js" }}
+{{ $bootstrap := resources.Get "js/bootstrap.js" }}
+
 <!--Required for the Medium style image zooming effect-->
 {{ $transition := resources.Get "js/transition.js" }}
 {{ $zoom := resources.Get "js/zoom.js" }}
 
-<!--Required by the theme itself-->
-{{ $jQuery := resources.Get "js/jquery.js" }}
-<script type="text/javascript" src="{{ $jQuery.RelPermalink }}"></script>
-{{ $bootstrap := resources.Get "js/bootstrap.js" }}
-
 <!--Asset Bundling-->
-{{ $jsCombined := slice $transition $zoom $jQuery $bootstrap | resources.Concat "js/main.js" }}
+{{ $jsCombined := slice $jQuery $transition $zoom $bootstrap | resources.Concat "js/main.js" }}
 
 <!--Asset Minification-->
 {{ $js := $jsCombined | resources.Minify }}
