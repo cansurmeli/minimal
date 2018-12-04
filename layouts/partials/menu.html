@@ -10,9 +10,12 @@
 		</div>
 		<div class="collapse navbar-collapse">
 			{{ if .Site.Menus.main }}
-				<ul class="nav navbar-nav">
+				{{ $currentPage := .  }}
+				<ul class="nav nav-pills">
 					{{ range sort .Site.Menus.main }}
-					<li><a href="{{ .URL }}">{{ .Name }}</a></li>
+					<li role="presentation" class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
+						<a href="{{ .URL }}">{{ .Name }}</a>
+					</li>
 					{{ end }}
 				</ul>
 			{{ end }}
