@@ -2,7 +2,8 @@
 {{ partial "menu" . }}
 
 <main>
-	<h1>{{ .Title }}</h1>
+	<h1>{{ upper .Title }}</h1>
+	<p><a href="/index.xml" target="_blank">RSS</a></p>
 
 	{{ range (.Paginator 5).Pages }}
 		{{ partial "list-item" . }}

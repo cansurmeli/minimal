@@ -3,16 +3,15 @@
 
 <main>
 	<div class="item">
-		<h4><a href="{{ .Scratch.Get "link" }}">{{ .Title }}</a></h4>
-		<h5>{{ $.Scratch.Get "subtitle" }}</h5>
+		<h1>{{ .Title }}</h1>
+		<h3>{{ $.Scratch.Get "date" }}</h3>
 		{{ range .Params.tags }}
 			<a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}">
 				<kbd class="item-tag">{{ . }}</kbd>
 			</a>
 		{{ end }}
-		<p>{{ .ReadingTime }} minutes to read</p>
+		<h4>{{ .ReadingTime }} minutes to read</h4>
 	</div>
-
 
 	<br><div class="text-justify">
 		{{ .Content }}
