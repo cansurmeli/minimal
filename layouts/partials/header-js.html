@@ -10,10 +10,10 @@
 {{ $jsCombined := slice $jQuery $transition $zoom $bootstrap | resources.Concat "js/main.js" }}
 
 <!--Asset Minification-->
-{{ $js := $jsCombined | resources.Minify }}
+{{ $jsMinified := $jsCombined | resources.Minify }}
 
 <!--Security Injection(fingerprinting & SRI)-->
-{{ $jsSecured := $js | resources.Fingerprint "sha512" }}
+{{ $jsSecured := $jsMinified | resources.Fingerprint "sha512" }}
 
 <!--JS Injection-->
 <script type="text/javascript" src="{{ $jsSecured.RelPermalink }}" integrity="{{ $jsSecured.Data.Integrity }}"></script>
