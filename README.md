@@ -1,16 +1,14 @@
 # Minimal
+Portfolio & blog theme powered by [Hugo](https://gohugo.io).
 
-Personal blog theme powered by [Hugo](https://gohugo.io).
-A live demo is available [here](https://themes.gohugo.io/theme/minimal/).
+A fork of the original [minimal](https://github.com/calintat/minimal) theme developed by [Calin Tataru](https://github.com/calintat).
 
 ## Installation
+You can install the theme either as a clone or submodule. The latter is recommended since it's a more modular approach and hence provides better management.
 
-You can install the theme either as a clone or submodule.
-
-I recommend the latter. From the root of your Hugo site, type the following:
-
+In order to install it as a submodule, from the root directory of your Hugo web site:
 ```
-$ git submodule add https://github.com/calintat/minimal.git themes/minimal
+$ git submodule add https://gitlab.cansurmeli.com/can/minimal.git
 $ git submodule init
 $ git submodule update
 ```
@@ -21,8 +19,14 @@ Now you can get updates to Minimal in the future by updating the submodule:
 $ git submodule update --remote themes/minimal
 ```
 
-## Configuration
+As the submodule is updated, it's recommended to commit that:
 
+```
+$ git add *
+$ git commit -m "Submodule update."
+```
+
+## Configuration
 After installation, take a look at the `exampleSite` folder inside `themes/minimal`.
 
 To get started, copy the `config.toml` file inside `exampleSite` to the root of your Hugo site:
@@ -36,7 +40,6 @@ Now edit this file and add your own information. Note that some fields can be om
 I recommend you use the theme's archetypes so now delete your site's `archetypes/default.md`.
 
 ## Features
-
 You can tweak the look of the theme to suit your needs in a number of ways:
 
 - The accent colour can be changed by using the `accent` field in `config.toml`.
@@ -55,7 +58,6 @@ For best results, I recommend you use a dark accent colour with a light backgrou
 ```
 
 ### Fonts
-
 The theme uses [Google Fonts](https://fonts.google.com) to load its font. To change the font:
 
 ```toml
@@ -64,7 +66,6 @@ The theme uses [Google Fonts](https://fonts.google.com) to load its font. To cha
 ```
 
 ### Syntax highlighting
-
 The theme supports syntax highlighting thanks to [highlight.js](https://highlightjs.org).
 
 It's disabled by default, so you have to enable it by setting `highlight` to `true` in your config.
