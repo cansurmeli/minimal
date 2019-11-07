@@ -1,3 +1,5 @@
 <figure>
-	<a href="i{{ $.Page.Params.content_dir }}{{ .Get "src"  }}" >{{ .Get "name"}}</a>
+	<a href="{{ $.Page.Params.content_dir }}{{ .Get "src"  }}" download>
+		{{ .Get "name"}}
+	</a>
 </figure>
