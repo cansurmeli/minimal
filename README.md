@@ -1,9 +1,16 @@
 # Minimal
-Portfolio & blog theme powered by [Hugo](https://gohugo.io).
 
-A fork of the original [minimal](https://github.com/calintat/minimal) theme developed by [Calin Tataru](https://github.com/calintat).
+Minimal is a personal portfolio & blog theme for [Hugo](https://gohugo.io).
+
+Minimal has been originally created by [Calin Tataru](https://github.com/calintat). I was really fond of what he concieved, so I forked his project and made some additions of my own:
+
+- added time to read,
+- minimised the JS footprint,
+- switched to SASS,
+- dark mode[to be implemented].
 
 ## Installation
+
 You can install the theme either as a clone or submodule. The latter is highly recommended since it's a more modular approach and hence provides better management.
 
 In order to install it as a submodule, from the root directory of your Hugo web site:
@@ -41,16 +48,19 @@ $ rm archetypes/*
 ```
 
 ## Features
+
 The original minimal theme manages some aspects of the design via the configuration file. However, I saw that it relates to a messy infrastructure. Also with the integration of [SASS](https://sass-lang.com), it's more modular.
 
 Hence if you want to modify the appearance of the theme, you'll have to deal with either `assets/sass` or `layouts/partials/` folders mostly.
 
 ### Fonts
+
 The theme uses [Google Fonts](https://fonts.google.com) to load it's font. To change the font, replace the content of the file on the location `assets/sass/dependencies/_google-fonts.css` with your Google Fonts'.
 
 The original minimal theme goes with the option of configuring the font from `config.toml` file but with this approach(SASS infrastructure with Hugo's built-in asset bundling & minification) CSS content is much better managed.
 
 ### Syntax highlighting
+
 The theme uses Hugo's built-in syntax highlighting; therefore no messy JS dependencies.
 
 It's enabled by default, and you can customise it via the variables in `config.toml` under the `[params]` section.
